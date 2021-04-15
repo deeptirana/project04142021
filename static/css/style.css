@@ -1,0 +1,16 @@
+html, body {
+    background-color: rgb(167, 231, 159);
+}
+#dp{
+    background-repeat:no-repeat;
+    background-position:right;
+};
+
+
+p{
+    color : red;
+}
+
+h1{
+    color: blue;
+}
