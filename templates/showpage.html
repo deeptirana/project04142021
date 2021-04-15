@@ -1,0 +1,46 @@
+{% extends "structure.html" %}
+
+{% block main %}
+<p align="Right"><a href = "/logout">Logout</a></p>
+<h1> Welcome to Login Page</h1>
+
+<br>
+{{message | safe}}
+
+<h1>Todo List</h1>
+
+<!-- Write your comments here -->
+
+<table>
+    <tr>
+        <th>Task-list</th>
+        <th>Actions</th>
+    </tr>
+
+    {% for row in rows %}
+    <tr>
+        <td>{{row['task_name']}}</td>
+        <td>{{row['listname']}}</td>
+        <td>
+            <a href="delete/{{task.id}}">Delete</a> <br>
+            <a href="update/{{task.id}}">Update</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+<br>
+<br>
+<br>
+<br>
+<div>Add a new List: 
+    <form action="/add" method="POST"> 
+        <input type="text" placeholder = "list name" name="todoitem" id ="listname"> 
+        <input type="text" placeholder = "task name" name="todoitem" id ="taskname"> 
+        <input type="submit" value="Add Item" class="button"> 
+    </form> 
+</div> 
+
+
+
+
+{% endblock main %} 
